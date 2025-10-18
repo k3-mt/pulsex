@@ -1,0 +1,25 @@
+[project]
+name = "ingestion-framework-stt"
+version = "0.1.0"
+description = "Extensible ingestion framework with pluggable pipelines. This build implements Speech-to-Text (STT) against accessible audio/HLS URLs."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115.0",
+  "uvicorn[standard]>=0.30.6",
+  "requests>=2.32.3",
+  "pydantic>=2.8.2",
+  "typer>=0.12.5",
+  "python-dotenv>=1.0.1",
+  "faster-whisper>=1.0.3"
+]
+
+[tool.uvicorn]
+reload = true
+
+[tool.setuptools]
+packages = ["ingest", "services"]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
