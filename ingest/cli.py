@@ -5,6 +5,7 @@ import typer
 from pydantic import ValidationError
 from ingest.core.base import PipelineRegistry
 from ingest.pipelines.stt_pipeline import STTConfig, STTPipeline
+from ingest.pipelines.youtube_pipeline import YouTubeConfig, YouTubePipeline
 
 app = typer.Typer(help="Ingestion framework CLI")
 
@@ -29,6 +30,9 @@ def run_pipeline(
         if name == "stt":
             cfg = STTConfig(**raw)
             pipeline = STTPipeline(cfg)
+        elif name == "youtube":
+            cfg = YouTubeConfig(**raw)
+            pipeline = YouTubePipeline(cfg)
         else:
             typer.echo(f"Pipeline '{name}' is registered but not wired in CLI.")
             raise typer.Exit(code=1)

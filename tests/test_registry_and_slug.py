@@ -5,5 +5,6 @@ def test_slugify_basic():
     assert slugify("Hello, World!") == "hello-world"
     assert slugify("École — №1") == "ecole-no1"
 
-def test_stt_registered():
+def test_pipelines_registered():
     assert "stt" in PipelineRegistry.list()
+    assert "youtube" in PipelineRegistry.list()

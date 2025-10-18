@@ -1,4 +1,4 @@
-.PHONY: install serve-stt run-stt-sample run-stt-parliament test
+.PHONY: install serve-stt run-stt-sample run-stt-parliament run-youtube-sample run-youtube-multilang test
 
 install:
 	python -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt
@@ -11,6 +11,12 @@ run-stt-sample:
 
 run-stt-parliament:
 	python -m ingest.cli run stt --config-path examples/stt_parliament.json
+
+run-youtube-sample:
+	python -m ingest.cli run youtube --config-path examples/youtube_sample.json
+
+run-youtube-multilang:
+	python -m ingest.cli run youtube --config-path examples/youtube_multilang.json
 
 test:
 	pytest -q

@@ -1,0 +1,7 @@
+{
+  "video_url": "https://www.youtube.com/watch?v=FTU1ExId7O4",
+  "languages": ["en"],
+  "preserve_formatting": false,
+  "output_dir": "outputs/youtube",
+  "output_basename": "sample_video"
+}
